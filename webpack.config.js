@@ -1,21 +1,10 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const dotenv = require("dotenv");
 
 module.exports = () => {
-  const env = dotenv.config().parsed;
-  let envKeys = [];
-
-  if (env) {
-    envKeys = Object.keys(env).reduce((prev, next) => {
-      prev[`process.env.${next}`] = JSON.stringify(env[next]);
-      return prev;
-    }, {});
-  }
-
   return {
-    entry: ["babel-polyfill", "./src/index.js"],
+    entry: "./src/index.js",
     output: {
       path: path.join(__dirname, "/dist"),
       filename: "index_bundle.js"
@@ -62,13 +51,13 @@ module.exports = () => {
     },
     devServer: {
       publicPath: "/",
-      historyApiFallback: true
+      historyApiFallback: true,
+      contentBase: "./"
     },
     plugins: [
       new HtmlWebpackPlugin({
         template: "./src/index.html"
-      }),
-      new webpack.DefinePlugin(envKeys)
+      })
     ]
   };
 };

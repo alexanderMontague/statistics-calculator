@@ -1,0 +1,51 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header {
+  text-align: center;
+}
+
+.calculation {
+  margin: 50px 25px;
+  padding: 25px;
+}
+
+.calcHeader {
+  text-align: center;
+}
+
+.textField {
+  width: 350px;
+}
+
+.card {
+  width: 50%;
+  margin: 25px auto;
+}
+
+.formulaContainer {
+  display: flex;
+  justify-content: space-between;
+
+  .formulaBox {
+    display: flex;
+    align-items: center;
+
+    .formulaPic {
+      height: 50px;
+      width: 100px;
+      margin-left: 50px;
+    }
+  }
+
+  .inputBox {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.submitBox {
+  width: 100%;
+  text-align: center;
+}
