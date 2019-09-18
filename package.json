@@ -1,11 +1,14 @@
 {
-  "name": "react_boilerplate",
+  "name": "STATS*2040",
   "version": "1.0.0",
-  "description": "React Boilerplate useful for starting projects or take home interview assignments",
+  "description": "Calculations useful in STATS*2040",
+  "homepage": "http://alexanderMontague.github.io/statistics-calculator",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot --port 3000",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Alex Montague",
   "license": "MIT",
@@ -18,7 +21,6 @@
     "dotenv": "^6.2.0",
     "eslint": "^5.16.0",
     "file-loader": "^1.1.11",
-    "gh-pages": "^2.1.1",
     "install": "^0.12.2",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
@@ -38,6 +40,7 @@
     "babel-preset-stage-0": "^6.0.15",
     "babel-runtime": "6.26.0",
     "css-loader": "^1.0.1",
+    "gh-pages": "^2.1.1",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.3.1",
