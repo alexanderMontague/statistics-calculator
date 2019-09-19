@@ -39,10 +39,9 @@ export const zScore = (observationVal, rawObservations) => {
 
 export const meanMedianMode = (rawObservations, outliers) => {
   outliers = outliers.filter(num => !isNaN(num) && num.length !== 0);
-  console.log(outliers, 1);
   const [observations, length, mean] = setUpCalculations(rawObservations);
 
-  let sortedObservations = observations.sort((a, b) => a < b);
+  let sortedObservations = observations.sort((a, b) => Number(a) - Number(b));
   sortedObservations = sortedObservations.filter(
     num => !outliers.includes(num)
   );
@@ -80,8 +79,6 @@ export const meanMedianMode = (rawObservations, outliers) => {
   if (currMax === 1) {
     modeArr = ["No Mode"];
   }
-
-  console.log(mean, median, modeArr);
 
   return [mean, median, modeArr];
 };
